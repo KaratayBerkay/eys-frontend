@@ -1,0 +1,7 @@
+allScripts = {
+
+}
+
+
+
+export default allScripts
