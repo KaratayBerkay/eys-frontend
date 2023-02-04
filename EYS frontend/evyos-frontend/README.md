@@ -1,10 +1,10 @@
 # essentials
 
-## Project setup
+## Project setup Vuetify
 
+```bash
+npm create vuetify
 ```
-# yarn
-yarn
 
 # npm
 npm install

@@ -35,11 +35,11 @@ import { useField, useForm } from 'vee-validate';
 
 const { handleSubmit, handleReset } = useForm({
     validationSchema: {
-        name(value) {
+        name(value: any) {
             if (value?.length >= 2) return true
             return 'Name needs to be at least 2 characters.'
         },
-        email(value) {
+        email(value: any) {
             if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
             return 'Lutfen dogru bir e-mail giriniz.'
         }
