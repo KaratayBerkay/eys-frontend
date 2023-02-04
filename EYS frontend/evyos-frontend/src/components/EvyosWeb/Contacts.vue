@@ -14,7 +14,6 @@
                     <v-row>
                         <v-text-field v-model="email.value.value" :error-messages="email.errorMessage.value"
                             label="E-mail"></v-text-field>
-
                         <v-divider />
                         <v-btn class="my-2" color="green-darken-2" block type="submit">
                             submit

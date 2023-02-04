@@ -10,32 +10,32 @@
             <v-divider />
             <v-container>
                 <v-row>
-                    <v-col v-for="elevation in elevations" :key="elevation" cols="12" md="4">
+                    <v-col v-for="(employee, index) in service_employee" :key="index" cols="12" md="4">
                         <v-card>
-                            <v-img class="rounded-img" src="https://www.evyos.com.tr/static/img/team/team-1.jpg"
-                                height="200px" circle></v-img>
-
+                            <v-card-item>
+                                <img class="rounded-img" :src="employee.picture" />
+                            </v-card-item>
                             <v-card-title>
-                                Top western road trips
+                                {{ employee.name }}
                             </v-card-title>
 
                             <v-card-subtitle>
-                                1,000 miles of wonder
+                                {{ employee.job }}
                             </v-card-subtitle>
 
                             <v-card-actions>
                                 <v-btn color="orange-lighten-2" variant="text">
-                                    Explore
+                                    Detayları inceleyin
                                 </v-btn>
 
                                 <v-spacer></v-spacer>
 
-                                <v-btn :icon="show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-                                    @click="show = !show"></v-btn>
+                                <v-btn :icon="!employee.visible ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+                                    @click="set_visible_cards_true(index)"></v-btn>
                             </v-card-actions>
 
                             <v-expand-transition>
-                                <div v-show="show">
+                                <div v-if="service_employee[index].visible">
                                     <v-divider></v-divider>
 
                                     <v-card-text>
@@ -60,14 +60,47 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, reactive } from 'vue'
+import { useAppConfigs } from '../../store/app'
 
-const elevations = ref([6, 12, 18])
-const show = ref(false)
+const useAppConfig = useAppConfigs()
+
+const service_employee = reactive([
+    {
+        name: "Servis Yetkilsi 1",
+        visible: false,
+        work: "",
+        job: "A Yetkilisi",
+        picture: "https://www.evyos.com.tr/static/img/team/team-1.jpg"
+    },
+    {
+        name: "Servis Yetkilsi 2",
+        visible: false,
+        work: "",
+        job: "B Yetkilisi",
+        picture: "https://www.evyos.com.tr/static/img/team/team-1.jpg"
+    },
+    {
+        name: "Servis Yetkilsi 3",
+        visible: false,
+        work: "",
+        job: "C Yetkilisi",
+        picture: "https://www.evyos.com.tr/static/img/team/team-1.jpg"
+    },
+]
+)
+
+function set_visible_cards_true(index: any) {
+    service_employee[index].visible = !service_employee[index].visible
+}
+
 </script>
 
 <style scoped>
 .rounded-img {
     border-radius: 50%;
+    align-content: space-around;
+    height: 150px;
+
 }
 </style>

@@ -39,7 +39,6 @@
                             <v-card height="434px">
                                 <v-img cover src="https://www.evyos.com.tr/static/img/about.jpg" height="100%"
                                     width="100%" class="bg-grey-lighten-2"></v-img>
-
                             </v-card>
                         </v-col>
                     </v-row>
