@@ -1,55 +1,18 @@
-# essentials
 
-## Project setup Vuetify
+# Startup Project Evyos
+Project Name: evyos-frontend
 
-```bash
-npm create vuetify
+## => Project setup Vuetify
 ```
-
-# npm
 npm install
-
-# pnpm
-pnpm install
 ```
-
-### Compiles and hot-reloads for development
-
+### => Go to project root
 ```
-# yarn
-yarn dev
-
-# npm
+cd evyos frontend
+```
+### => Run project
+```
 npm run dev
-
-# pnpm
-pnpm dev
-```
-
-### Compiles and minifies for production
-
-```
-# yarn
-yarn build
-
-# npm
-npm run build
-
-# pnpm
-pnpm build
-```
-
-### Lints and fixes files
-
-```
-# yarn
-yarn lint
-
-# npm
-npm run lint
-
-# pnpm
-pnpm lint
 ```
 
 ### Customize configuration
