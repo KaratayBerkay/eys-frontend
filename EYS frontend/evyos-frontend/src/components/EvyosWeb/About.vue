@@ -1,14 +1,19 @@
 <template>
     <div class="d-flex align-center flex-column">
         <v-card color="" class="text-center m-3 fit-content" width="90%" elevation="5">
-            <div class="fs-1 text-center m-3">Hakkımızda</div>
-            <div class="fs-5 text-center m-3">Magnam dolores commodi suscipit. Necessitatibus eius consequatur
+            <v-divider />
+            <v-sheet color="green-darken-1 mt-5 mx-5">
+                <v-card color="green-darken-2 text-center" title="Hakkımızda"
+                    class=" fs-1 align-center white--text"></v-card>
+            </v-sheet>
+            <div class="fs-5 text-center m-5">Magnam dolores commodi suscipit. Necessitatibus eius
+                consequatur
                 ex aliquid
                 fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit
                 suscipit
                 alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</div>
             <v-divider />
-            <v-container class="fill-height " fluid style="">
+            <v-container style="height:600px">
                 <v-fade-transition mode="out-in">
                     <v-row>
                         <v-col cols="6">

@@ -1,7 +1,7 @@
 <template>
     <v-app-bar class="d-flex justify-space-between text-white" color="green-darken-2">
         <v-divider inset vertical></v-divider>
-        <v-toolbar-title class="fs-3">Evyos Web App</v-toolbar-title>
+        <v-toolbar-title class="fs-3">Evyos</v-toolbar-title>
         <v-toolbar-items v-for="(item, index) in headerItems" :key="index">
             <v-divider vertical></v-divider>
             <v-btn :width="headerItemWidth" variant="text" class="fs-7">{{ item }}</v-btn>

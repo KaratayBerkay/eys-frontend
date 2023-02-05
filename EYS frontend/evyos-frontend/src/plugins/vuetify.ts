@@ -1,6 +1,9 @@
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
 import { createVuetify, ThemeDefinition } from 'vuetify'
+import 'vuetify/styles'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
 const LightTheme = {
   dark: false,
@@ -20,6 +23,8 @@ const LightTheme = {
 
 
 export default createVuetify({
+  components,
+  directives,
   ssr: true,
   theme: {
     defaultTheme: 'LightTheme',

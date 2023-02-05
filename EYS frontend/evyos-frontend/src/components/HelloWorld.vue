@@ -26,15 +26,10 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from 'vue'
 import HeaderVue from '../components/EvyosWeb/Header.vue'
 import Carousel from '../components/EvyosWeb/Carousel.vue'
 import About from '../components/EvyosWeb/About.vue'
 import Services from '../components/EvyosWeb/Services.vue'
 import Contacts from './EvyosWeb/Contacts.vue'
-
-const theme = ref('light')
-const headerItemWidth = ref('200px')
-
 
 </script>

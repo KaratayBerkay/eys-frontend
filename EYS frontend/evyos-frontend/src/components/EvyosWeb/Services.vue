@@ -1,14 +1,18 @@
 <template>
     <div class="d-flex justify-content-evenly" justify="space-around">
         <v-card color="" class="text-center m-3 justify-content-evenly" width="90%" elevation="5">
-            <div class="fs-1 text-center m-3">Yetkili Servislerimiz</div>
+            <v-divider />
+            <v-sheet color="green-darken-1 mt-5 mx-5">
+                <v-card color="green-darken-2 text-center" title="Yetkili Servislerimiz"
+                    class=" fs-1 align-center white--text"></v-card>
+            </v-sheet>
             <div class="fs-5 text-center m-3">Magnam dolores commodi suscipit. Necessitatibus eius consequatur
                 ex aliquid
                 fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit
                 suscipit
                 alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</div>
             <v-divider />
-            <v-container>
+            <v-container style="height:600px">
                 <v-row>
                     <v-col v-for="(employee, index) in service_employee" :key="index" cols="12" md="4">
                         <v-card>
