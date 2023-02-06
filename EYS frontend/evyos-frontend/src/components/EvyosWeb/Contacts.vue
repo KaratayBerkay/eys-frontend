@@ -4,9 +4,10 @@
         <v-card class="px-5 m-3" width="90%" style="height:1100px" elevation="5">
             <v-divider />
             <div>
-                <v-sheet color="green-darken-1">
-                    <v-card color="green-darken-2 text-center" title="İletişim Bilgilerimiz"
-                        class=" fs-1 align-center white--text"></v-card>
+                <v-sheet color=" mt-5 mx-5">
+                    <v-card style="background-color:#C8E6C9" color="" class="align-center">
+                        <h1 class="my-5 green lighten-4 text-center">İletişim</h1>
+                    </v-card>
                 </v-sheet>
             </div>
             <div class="fs-5 text-center m-3">Magnam dolores commodi suscipit. Necessitatibus eius consequatur
@@ -17,17 +18,19 @@
             <v-divider />
             <v-row class="px-2 m-1" width="90%">
                 <v-col cols="12" md="6">
+                    <div class="text-center fs-3 my-5 justify-center">
+
+                        <v-sheet color=" mt-5 mx-5">
+                            <v-card style="background-color:#C8E6C9" color="text-center" class="align-center">
+                                <h1 class="my-5 green lighten-4">Bizimle iletişime
+                                    geçin</h1>
+                            </v-card>
+                        </v-sheet>
+
+                    </div>
                     <v-row>
                         <v-container>
                             <v-card class="mx-auto d-block" tile>
-                                <v-card-title class="white--text">
-                                    <div class="text-center fs-3" color="green-darken-4">
-                                        <p color="black" disabled active>
-                                            İletişim Bilgilerimiz
-                                        </p>
-                                    </div>
-                                </v-card-title>
-
                                 <v-list>
                                     <v-list-item v-for="(item, i) in socialitems" :key="i">,
                                         <v-row>
@@ -74,20 +77,27 @@
                 </v-col>
 
                 <v-col cols="12" md="6">
-                    <v-form @submit.prevent="handleSubmit" lazy-validation>
+                    <div class="text-center fs-3 my-5 justify-center">
+                        <v-sheet color="my-5 mx-5">
+                            <v-card style="background-color:#C8E6C9" color="text-center" class="align-center">
+                                <h1 class="my-5 green lighten-4">Bize doğrudan e-posta gönderin</h1>
+                            </v-card>
+                        </v-sheet>
+                    </div>
+
+                    <v-form @submit.prevent="handleSubmit" lazy-validation class="py-2">
                         <v-row justify="space-around">
                             <v-col cols="12" md="6">
                                 <v-text-field v-model="firstname.name" :counter="counter"
-                                    :rules="[firstname.rules.required]" label="First name" required
-                                    clearable></v-text-field>
+                                    :rules="[firstname.rules.required]" label="İsim" required clearable></v-text-field>
                             </v-col>
                             <v-col cols="12" md="6">
                                 <v-text-field v-model="lastname.name" :counter="counter"
-                                    :rules="[lastname.rules.required]" label="Last name" required
+                                    :rules="[lastname.rules.required]" label="Soyisim" required
                                     clearable></v-text-field>
                             </v-col>
                             <v-col cols="12" md="12">
-                                <v-text-field v-model.trim="email.name" label="Email" required
+                                <v-text-field v-model.trim="email.name" label="e-posta" required
                                     :rules="[email.rules.required, email.rules.validation]" clearable />
                                 <v-select v-model="subjectSelection" :items="items" label="Konu" solo></v-select>
                                 <v-textarea v-model="descriptionText.name"
@@ -149,6 +159,7 @@ const socialitems = [
     { text: 'Telefon', subtext: "+90 (111) 11 11 222", icon: 'mdi-cellphone-check' },
 ]
 
+
 const firstname = reactive({
     name: '',
     rules: {
@@ -177,7 +188,7 @@ const descriptionText = reactive({
     rules: {
         required: v => !!v || "Lutfen bir açıklama giriniz. Boş bırakılamaz",
         validation: v => {
-            return v.length > 10 || "Lutfen dogru bir açıklama giriniz. 10 karakterden büyük olmalı";
+            return v.length > 49 || "Lutfen dogru bir açıklama giriniz. 49 karakterden büyük olmalı";
         }
     },
 });
@@ -185,7 +196,7 @@ const descriptionText = reactive({
 const submitDisabled = computed(() => {
     const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var myBool: boolean = (pattern.test(email.name) && lastname.name !== "" && firstname.name !== "")
-    myBool = myBool && Boolean(subjectSelection.value) && Boolean(descriptionText.name.length > 10)
+    myBool = myBool && Boolean(subjectSelection.value) && Boolean(descriptionText.name.length > 49)
     return myBool ? false : true
 })
 

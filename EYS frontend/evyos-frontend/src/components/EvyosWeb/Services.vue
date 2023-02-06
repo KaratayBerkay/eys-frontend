@@ -2,9 +2,10 @@
     <div class="d-flex justify-content-evenly" justify="space-around">
         <v-card color="" class="text-center m-3 justify-content-evenly" width="90%" elevation="5">
             <v-divider />
-            <v-sheet color="green-darken-1 mt-5 mx-5">
-                <v-card color="green-darken-2 text-center" title="Yetkili Servislerimiz"
-                    class=" fs-1 align-center white--text"></v-card>
+            <v-sheet color=" mt-5 mx-5">
+                <v-card style="background-color:#C8E6C9" class="align-center">
+                    <h1 class="my-5 green lighten-4">Yetkili Servislerimiz</h1>
+                </v-card>
             </v-sheet>
             <div class="fs-5 text-center m-3">Magnam dolores commodi suscipit. Necessitatibus eius consequatur
                 ex aliquid
@@ -41,7 +42,6 @@
                             <v-expand-transition>
                                 <div v-if="service_employee[index].visible">
                                     <v-divider></v-divider>
-
                                     <v-card-text>
                                         I'm a thing. But, like most politicians, he promised more than he could
                                         deliver.
@@ -58,6 +58,7 @@
                     </v-col>
                 </v-row>
             </v-container>
+            <v-divider />
         </v-card>
     </div>
     <!--  -->
